@@ -8,10 +8,10 @@ I can see time in range, the share of readings inside a defined glucose band, al
 
 To see it without installing anything, open the saved [public-data report](reports/public.md), [deliberately damaged example](reports/damaged.md), or [hand-calculated example](reports/hand.md). The public example uses a published processed series, so its coverage measures available rows, not verified original sensor wear. It does not establish clinical data sufficiency.
 
-To run it locally:
+To run it locally, install [uv](https://docs.astral.sh/uv/getting-started/installation/), which creates the Python environment, then run:
 
 ```sh
-python3 -m venv .venv
+uv venv --python 3.12
 source .venv/bin/activate
 python -m pip install -e '.[test]'
 python scripts/reproduce.py
