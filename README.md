@@ -11,7 +11,7 @@ To see it without installing anything, open the saved [public-data report](repor
 To run it locally, install [uv](https://docs.astral.sh/uv/getting-started/installation/), which creates the Python environment, then run:
 
 ```sh
-uv venv --python 3.12
+uv venv --seed --python 3.12
 source .venv/bin/activate
 python -m pip install -e '.[test]'
 python scripts/reproduce.py
