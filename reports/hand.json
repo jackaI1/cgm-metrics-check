@@ -1,0 +1,125 @@
+{
+  "notice": "Not a medical device. No treatment advice.",
+  "window": {
+    "start": "2025-01-01T00:00:00+00:00",
+    "end_exclusive": "2025-01-01T00:20:00+00:00",
+    "cadence_minutes": 5,
+    "days": 0.013888888888888888,
+    "exploratory": true
+  },
+  "readings_used": 4,
+  "expected_readings": 4,
+  "coverage_percent": 100.0,
+  "metrics": {
+    "tir": {
+      "value": 50.0,
+      "unit": "%",
+      "status": "reported",
+      "reason": null,
+      "readings_used": 4,
+      "expected_readings": 4,
+      "coverage_percent": 100.0
+    },
+    "tbr": {
+      "value": 25.0,
+      "unit": "%",
+      "status": "reported",
+      "reason": null,
+      "readings_used": 4,
+      "expected_readings": 4,
+      "coverage_percent": 100.0
+    },
+    "tar": {
+      "value": 25.0,
+      "unit": "%",
+      "status": "reported",
+      "reason": null,
+      "readings_used": 4,
+      "expected_readings": 4,
+      "coverage_percent": 100.0
+    },
+    "tbr_level1": {
+      "value": 0.0,
+      "unit": "%",
+      "status": "reported",
+      "reason": null,
+      "readings_used": 4,
+      "expected_readings": 4,
+      "coverage_percent": 100.0
+    },
+    "tbr_level2": {
+      "value": 25.0,
+      "unit": "%",
+      "status": "reported",
+      "reason": null,
+      "readings_used": 4,
+      "expected_readings": 4,
+      "coverage_percent": 100.0
+    },
+    "tar_level1": {
+      "value": 25.0,
+      "unit": "%",
+      "status": "reported",
+      "reason": null,
+      "readings_used": 4,
+      "expected_readings": 4,
+      "coverage_percent": 100.0
+    },
+    "tar_level2": {
+      "value": 0.0,
+      "unit": "%",
+      "status": "reported",
+      "reason": null,
+      "readings_used": 4,
+      "expected_readings": 4,
+      "coverage_percent": 100.0
+    },
+    "mean_glucose": {
+      "value": 125.0,
+      "unit": "mg/dL",
+      "status": "reported",
+      "reason": null,
+      "readings_used": 4,
+      "expected_readings": 4,
+      "coverage_percent": 100.0
+    },
+    "gmi": {
+      "value": 6.300000000000001,
+      "unit": "%",
+      "status": "reported",
+      "reason": null,
+      "readings_used": 4,
+      "expected_readings": 4,
+      "coverage_percent": 100.0
+    },
+    "cv": {
+      "value": 44.721359549995796,
+      "unit": "%",
+      "status": "reported",
+      "reason": null,
+      "readings_used": 4,
+      "expected_readings": 4,
+      "coverage_percent": 100.0
+    }
+  },
+  "quality": {
+    "mixed_units": false,
+    "units_seen": [
+      "mg/dL"
+    ],
+    "duplicate_rows": 0,
+    "conflicting_timestamps": 0,
+    "out_of_window_rows": 0,
+    "gaps": [],
+    "longest_gap_minutes": 0
+  },
+  "daily_coverage": [
+    {
+      "date": "2025-01-01",
+      "expected_readings": 4,
+      "readings_used": 4,
+      "coverage_percent": 100.0
+    }
+  ],
+  "provenance_note": "SYNTHETIC HAND CASE, not study data: 50, 100, 150, 200 mg/dL. Mean = 500/4 = 125. Population variance = 12500/4 = 3125. CV = sqrt(3125)/125*100. GMI = 3.31+0.02392*125 = 6.3. Two of four readings in range, one below, one above."
+}

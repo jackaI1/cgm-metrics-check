@@ -1,0 +1,229 @@
+{
+  "notice": "Not a medical device. No treatment advice.",
+  "window": {
+    "start": "2020-05-01T10:30:00+00:00",
+    "end_exclusive": "2020-05-15T10:30:00+00:00",
+    "cadence_minutes": 1,
+    "days": 14.0,
+    "exploratory": false
+  },
+  "readings_used": 11729,
+  "expected_readings": 20160,
+  "coverage_percent": 58.179563492063494,
+  "metrics": {
+    "tir": {
+      "value": null,
+      "unit": "%",
+      "status": "refused",
+      "reason": "coverage below 70% of expected readings",
+      "readings_used": 11729,
+      "expected_readings": 20160,
+      "coverage_percent": 58.179563492063494
+    },
+    "tbr": {
+      "value": null,
+      "unit": "%",
+      "status": "refused",
+      "reason": "coverage below 70% of expected readings",
+      "readings_used": 11729,
+      "expected_readings": 20160,
+      "coverage_percent": 58.179563492063494
+    },
+    "tar": {
+      "value": null,
+      "unit": "%",
+      "status": "refused",
+      "reason": "coverage below 70% of expected readings",
+      "readings_used": 11729,
+      "expected_readings": 20160,
+      "coverage_percent": 58.179563492063494
+    },
+    "tbr_level1": {
+      "value": null,
+      "unit": "%",
+      "status": "refused",
+      "reason": "coverage below 70% of expected readings",
+      "readings_used": 11729,
+      "expected_readings": 20160,
+      "coverage_percent": 58.179563492063494
+    },
+    "tbr_level2": {
+      "value": null,
+      "unit": "%",
+      "status": "refused",
+      "reason": "coverage below 70% of expected readings",
+      "readings_used": 11729,
+      "expected_readings": 20160,
+      "coverage_percent": 58.179563492063494
+    },
+    "tar_level1": {
+      "value": null,
+      "unit": "%",
+      "status": "refused",
+      "reason": "coverage below 70% of expected readings",
+      "readings_used": 11729,
+      "expected_readings": 20160,
+      "coverage_percent": 58.179563492063494
+    },
+    "tar_level2": {
+      "value": null,
+      "unit": "%",
+      "status": "refused",
+      "reason": "coverage below 70% of expected readings",
+      "readings_used": 11729,
+      "expected_readings": 20160,
+      "coverage_percent": 58.179563492063494
+    },
+    "mean_glucose": {
+      "value": null,
+      "unit": "mg/dL",
+      "status": "refused",
+      "reason": "coverage below 70% of expected readings",
+      "readings_used": 11729,
+      "expected_readings": 20160,
+      "coverage_percent": 58.179563492063494
+    },
+    "gmi": {
+      "value": null,
+      "unit": "%",
+      "status": "refused",
+      "reason": "coverage below 70% of expected readings",
+      "readings_used": 11729,
+      "expected_readings": 20160,
+      "coverage_percent": 58.179563492063494
+    },
+    "cv": {
+      "value": null,
+      "unit": "%",
+      "status": "refused",
+      "reason": "coverage below 70% of expected readings",
+      "readings_used": 11729,
+      "expected_readings": 20160,
+      "coverage_percent": 58.179563492063494
+    }
+  },
+  "quality": {
+    "mixed_units": true,
+    "units_seen": [
+      "mg/dL",
+      "mmol/L"
+    ],
+    "duplicate_rows": 41,
+    "conflicting_timestamps": 1,
+    "out_of_window_rows": 0,
+    "gaps": [
+      {
+        "start": "2020-05-01T11:10:00+00:00",
+        "end_exclusive": "2020-05-01T11:11:00+00:00",
+        "missing_readings": 1,
+        "minutes": 1.0
+      },
+      {
+        "start": "2020-05-03T12:30:00+00:00",
+        "end_exclusive": "2020-05-05T14:30:00+00:00",
+        "missing_readings": 3000,
+        "minutes": 3000.0
+      },
+      {
+        "start": "2020-05-11T16:00:00+00:00",
+        "end_exclusive": "2020-05-15T10:30:00+00:00",
+        "missing_readings": 5430,
+        "minutes": 5430.0
+      }
+    ],
+    "longest_gap_minutes": 5430.0
+  },
+  "daily_coverage": [
+    {
+      "date": "2020-05-01",
+      "expected_readings": 810,
+      "readings_used": 809,
+      "coverage_percent": 99.87654320987654
+    },
+    {
+      "date": "2020-05-02",
+      "expected_readings": 1440,
+      "readings_used": 1440,
+      "coverage_percent": 100.0
+    },
+    {
+      "date": "2020-05-03",
+      "expected_readings": 1440,
+      "readings_used": 750,
+      "coverage_percent": 52.083333333333336
+    },
+    {
+      "date": "2020-05-04",
+      "expected_readings": 1440,
+      "readings_used": 0,
+      "coverage_percent": 0.0
+    },
+    {
+      "date": "2020-05-05",
+      "expected_readings": 1440,
+      "readings_used": 570,
+      "coverage_percent": 39.583333333333336
+    },
+    {
+      "date": "2020-05-06",
+      "expected_readings": 1440,
+      "readings_used": 1440,
+      "coverage_percent": 100.0
+    },
+    {
+      "date": "2020-05-07",
+      "expected_readings": 1440,
+      "readings_used": 1440,
+      "coverage_percent": 100.0
+    },
+    {
+      "date": "2020-05-08",
+      "expected_readings": 1440,
+      "readings_used": 1440,
+      "coverage_percent": 100.0
+    },
+    {
+      "date": "2020-05-09",
+      "expected_readings": 1440,
+      "readings_used": 1440,
+      "coverage_percent": 100.0
+    },
+    {
+      "date": "2020-05-10",
+      "expected_readings": 1440,
+      "readings_used": 1440,
+      "coverage_percent": 100.0
+    },
+    {
+      "date": "2020-05-11",
+      "expected_readings": 1440,
+      "readings_used": 960,
+      "coverage_percent": 66.66666666666667
+    },
+    {
+      "date": "2020-05-12",
+      "expected_readings": 1440,
+      "readings_used": 0,
+      "coverage_percent": 0.0
+    },
+    {
+      "date": "2020-05-13",
+      "expected_readings": 1440,
+      "readings_used": 0,
+      "coverage_percent": 0.0
+    },
+    {
+      "date": "2020-05-14",
+      "expected_readings": 1440,
+      "readings_used": 0,
+      "coverage_percent": 0.0
+    },
+    {
+      "date": "2020-05-15",
+      "expected_readings": 630,
+      "readings_used": 0,
+      "coverage_percent": 0.0
+    }
+  ],
+  "provenance_note": "DELIBERATELY DAMAGED COPY: removed a block of rows, changed some declared units with values converted, and injected duplicates and a conflicting timestamp. Source: public CGMacros version 1.0.0, series 001, first glucose column. These are published processed minute-resolution values. Coverage means available rows, not verified original sensor wear; upstream filling cannot be audited. Dates are publisher-shifted. UTC is an explicit placeholder because the source timezone is unknown. This example does not establish clinical data sufficiency."
+}
