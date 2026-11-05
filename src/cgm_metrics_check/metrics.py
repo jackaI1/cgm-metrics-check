@@ -82,7 +82,7 @@ def analyze(readings: Iterable[Reading], *, start: datetime, end: datetime,
 
     def record(name, unit, compute):
         metrics[name] = {
-            'value': None if reason else compute(), 'unit': unit,
+            'value': None if reason else round(compute(), 10), 'unit': unit,
             'status': 'refused' if reason else 'reported', 'reason': reason or None,
             'readings_used': n, 'expected_readings': expected,
             'coverage_percent': fraction * 100,

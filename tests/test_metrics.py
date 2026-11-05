@@ -134,3 +134,12 @@ def test_invalid_window_or_cadence_is_rejected(kwargs):
 def test_off_grid_input_is_rejected_instead_of_overcounted():
     with pytest.raises(ValueError, match='grid'):
         short([Reading(START + timedelta(minutes=1), 100, 'mg/dL')], 2)
+
+
+def test_unit_conversion_overflow_is_an_input_error():
+    with pytest.raises(ValueError, match='normalized'):
+        Reading(START, 1e308, 'mmol/L')
+
+
+def test_output_precision_is_stable_for_hand_computed_gmi():
+    assert short(rows([50, 100, 150, 200]), 4)['metrics']['gmi']['value'] == 6.3

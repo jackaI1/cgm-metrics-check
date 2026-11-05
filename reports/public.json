@@ -12,7 +12,7 @@
   "coverage_percent": 73.06547619047619,
   "metrics": {
     "tir": {
-      "value": 99.13102511880516,
+      "value": 99.1310251188,
       "unit": "%",
       "status": "reported",
       "reason": null,
@@ -21,7 +21,7 @@
       "coverage_percent": 73.06547619047619
     },
     "tbr": {
-      "value": 0.8689748811948405,
+      "value": 0.8689748812,
       "unit": "%",
       "status": "reported",
       "reason": null,
@@ -39,7 +39,7 @@
       "coverage_percent": 73.06547619047619
     },
     "tbr_level1": {
-      "value": 0.8689748811948405,
+      "value": 0.8689748812,
       "unit": "%",
       "status": "reported",
       "reason": null,
@@ -75,7 +75,7 @@
       "coverage_percent": 73.06547619047619
     },
     "mean_glucose": {
-      "value": 88.51737949762389,
+      "value": 88.5173794976,
       "unit": "mg/dL",
       "status": "reported",
       "reason": null,
@@ -84,7 +84,7 @@
       "coverage_percent": 73.06547619047619
     },
     "gmi": {
-      "value": 5.427335717583164,
+      "value": 5.4273357176,
       "unit": "%",
       "status": "reported",
       "reason": null,
@@ -93,7 +93,7 @@
       "coverage_percent": 73.06547619047619
     },
     "cv": {
-      "value": 10.265379444236233,
+      "value": 10.2653794442,
       "unit": "%",
       "status": "reported",
       "reason": null,

@@ -21,7 +21,7 @@ python scripts/reproduce.py
 
 I downloaded one anonymized glucose series from CGMacros, kept its publisher-shifted timestamps and glucose values, and added its documented unit. I did not retain demographics, meals or photos. No substitute dataset was needed.
 
-These rounded results come from `python scripts/reproduce.py`; the JSON reports preserve the calculation precision:
+These rounded results come from `python scripts/reproduce.py`; JSON metric values retain ten decimal places for reproducibility across Python versions:
 
 | Example | Accepted / expected readings | Coverage | Time in range |
 | --- | --- | --- | --- |
@@ -96,4 +96,4 @@ python -m pip install build
 python -m build
 ```
 
-The test command currently passes 39 cases, including hand-derived results, the coverage boundary, missing window edges, timezone equivalence, conflicting timestamps, mixed units, invalid input, CLI refusal and validation of every exported public reading. [CI](.github/workflows/ci.yml) runs the full suite, reproduces the saved reports, builds the package and exercises the installed command across its declared Python versions.
+The test command currently passes 45 cases, including hand-derived results, the coverage boundary, missing window edges, timezone equivalence, conflicting timestamps, mixed units, invalid input, CLI refusal and validation of every exported public reading. [CI](.github/workflows/ci.yml) runs the full suite, reproduces the saved reports, builds the package and exercises the installed command across its declared Python versions.

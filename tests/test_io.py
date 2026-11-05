@@ -94,3 +94,18 @@ def test_cli_invalid_input_is_actionable_without_traceback(tmp_path):
     assert result.returncode == 1
     assert 'error:' in result.stderr
     assert 'Traceback' not in result.stderr
+
+
+@pytest.mark.parametrize('offset', ['+00:00:30', '+14:01', '-15:00'])
+def test_rejects_offsets_that_cannot_be_exported_as_fhir(offset):
+    from cgm_metrics_check.io import parse_timestamp
+    with pytest.raises(ValueError, match='offset'):
+        Reading(parse_timestamp('2025-01-01T00:00:00' + offset), 100, 'mg/dL')
+
+
+def test_preserves_supported_non_utc_offset_in_fhir():
+    from cgm_metrics_check.io import parse_timestamp
+    reading = Reading(parse_timestamp('2025-01-01T00:00:00-05:00'), 100, 'mg/dL')
+    resource = observations([reading])[0]
+    assert resource['effectiveDateTime'] == '2025-01-01T00:00:00-05:00'
+    Observation.parse_obj(resource)
