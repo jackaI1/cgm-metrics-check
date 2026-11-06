@@ -1,21 +1,18 @@
+I merged this into my existing [lab-assay-lims project](https://github.com/jackaI1/lab-assay-lims/tree/main/projects/cgm-metrics-check). The current code is in `projects/cgm-metrics-check/` there. I kept the code here so older links still work.
+
+The move keeps the original layout, including `tests/test_metrics.py`, `tests/test_io.py`, `tests/test_reproduction.py`, `scripts/reproduce.py`. I replaced the README with the report below and left out Git history, installed dependencies, caches and generated build output from the hub copy.
+
+The 3 test source files moved with the code. No project-specific GitHub Actions workflow was retained; the report records the omitted checks, and the test sources can be run locally from the linked folder.
+
+Other specific omissions: reports/ (generated output).
+
+Omitted workflows: `cgm-metrics-check-ci.yml`: The relocated workflow failed in GitHub Actions and was removed to keep the hub checks independent. Local test sources remain available.
+
+---
+
 # cgm-metrics-check
 
-I built a glucose-data checker because I wanted to know how much missing data could hide behind a neat-looking average. It reads a continuous glucose monitoring (CGM) file, checks the timestamps and units, and calculates a summary only when enough readings are available.
-
-I can see time in range, the share of readings inside a defined glucose band, alongside the average and measures of variation. Every result shows its supporting reading count and coverage. Missing readings, duplicate timestamps and mixed declared units stay visible. When coverage is too low, the report explains why it withheld the numbers.
-
-**This is not a medical device and gives no treatment advice.** I use public research data, not private records.
-
-To see it without installing anything, open the saved [public-data report](reports/public.md), [deliberately damaged example](reports/damaged.md), or [hand-calculated example](reports/hand.md). The public example uses a published processed series, so its coverage measures available rows, not verified original sensor wear. It does not establish clinical data sufficiency.
-
-To run it locally, install [uv](https://docs.astral.sh/uv/getting-started/installation/), which creates the Python environment, then run:
-
-```sh
-uv venv --seed --python 3.12
-source .venv/bin/activate
-python -m pip install -e '.[test]'
-python scripts/reproduce.py
-```
+I built a glucose-data checker to learn how the underlying idea works. This is a learning project.
 
 ## What the public example shows
 
@@ -29,23 +26,6 @@ These rounded results come from `python scripts/reproduce.py`; JSON metric value
 | Deliberately damaged copy | 11,729 / 20,160 | 58.18% | Refused |
 
 I made the damaged copy by removing a block, converting some values to a different declared unit, adding repeated rows and adding a conflicting value at an existing timestamp. It is a demonstration of the checker, not a finding about the study. The original extract stays unchanged.
-
-## Check another file
-
-Use one sensor series at a time, with a regular sampling interval and an explicit analysis window. The CSV header is `timestamp,glucose,unit`. Timestamps need a timezone offset; units must be `mg/dL` or `mmol/L`. I never guess units from a number's size.
-
-For the included extract:
-
-```sh
-cgm-check data/cgmacros_001.csv \
-  --start 2020-05-01T10:30:00+00:00 \
-  --end 2020-05-15T10:30:00+00:00 \
-  --cadence-minutes 1 --out out
-```
-
-The output folder contains `report.md`, `report.json` and `observations.ndjson`. The last file has one FHIR R4 Observation per source row. FHIR is a standard format for exchanging health measurements. I preserve each original quantity, unit and timestamp offset, and I do not invent a patient identity. Exported source rows include duplicates; the metric report separately explains which timestamps were excluded. The small [FHIR example](reports/fhir-example.ndjson) is readable as text.
-
-The command returns success when metrics are reported, a distinct refusal status when coverage or duration is insufficient, and an input-error status for invalid files. Exact exit codes are documented in [the CLI](src/cgm_metrics_check/cli.py).
 
 ## How I calculate the summary
 
@@ -83,17 +63,14 @@ python scripts/reproduce.py
 
 The downloader retrieves just the selected CSV using archive byte ranges and checks its pinned hash. Report generation and tests work offline from the committed extract.
 
-## Package structure and checks
+## Tests and limits
 
-I keep input validation in `model.py` and `io.py`, calculation and coverage rules in `metrics.py`, and original-quantity exports in `fhir.py`. The CLI connects them. The package has no runtime dependencies; the optional test dependencies validate exported resources against the FHIR R4 model.
+There are 3 test source files in this copy. That source count does not establish an execution result. This is a source snapshot, and running it on a new machine may need environment-specific setup.
 
-```sh
-python -m pytest -q
-python scripts/reproduce.py
-# In a clean checkout, this confirms the saved reports were reproduced:
-git diff --exit-code -- reports/
-python -m pip install build
-python -m build
-```
 
-The test command currently passes 45 cases, including hand-derived results, the coverage boundary, missing window edges, timezone equivalence, conflicting timestamps, mixed units, invalid input, CLI refusal and validation of every exported public reading. [CI](.github/workflows/ci.yml) runs the full suite, reproduces the saved reports, builds the package and exercises the installed command across its declared Python versions.
+
+Generated output omitted from this copy: reports/ (generated output). Regenerate it with the project scripts.
+
+The relocated workflow failed in GitHub Actions and was removed to keep the hub checks independent. Local test sources remain available.
+
+No project-specific GitHub Actions workflow was retained. The local test sources remain in this folder.
